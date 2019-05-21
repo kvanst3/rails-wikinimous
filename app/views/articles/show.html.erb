@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+<div style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif;">
+  <nav style="background-color: rgb(220, 220, 220)">
+    <div class="container-fluid p-3 mb-2>
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <div class="d-flex justify-content-between">
+         <a href="/articles" style="text-decoration: none;">Wikinimous</a>
+         <a href="/articles/new" style="text-decoration: none">New Article</a>
+        <!--   <%= link_to 'New Article', article_path('new') %> -->
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div class="container">
+    <div class="d-flex flex-row align-items-center">
+      <h1 class="mr-2"><%= @article.title %></h1>
+      <h4 class="mr-2"> <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_article_path(@article) %></h4>
+      <h4><%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, article_path(@article),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %></h4>
+    </div>
+    </br>
+    <%= @article.content %>
+  </div>
+</div>
